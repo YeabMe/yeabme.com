@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Title -->
+    <title>YeabMe</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- DasiyUI -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.3/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- Theme-Change -->
+    <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+    <!-- Jquery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+
+  <body>
+    <!-- Loading -->
+    <div
+      class="spin-wrapper h-screen flex justify-center items-center bg-base-100"
+    >
+      <span class="loading loading-dots loading-lg"></span>
+    </div> 
+    <!-- Loading End-->
+
+    <!-- Navbar -->
+    <div class="Nav-section navbar z-[99999] bg-base-100 shadow-sm" id="sticky">
+      <div class="navbar-start md:ml-12">
+        <div class="dropdown">
+          <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h7"
+              />
+            </svg>
+          </div>
+          <ul
+            tabindex="0"
+            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+          >
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="navbar-center md:mr-6">
+        <a href="#home" class="btn btn-ghost text-lg">YeabMe</a>
+      </div>
+      <div class="navbar-end md:mr-12">
+        <label class="swap swap-rotate btn btn-ghost btn-circle">
+          <!-- this hidden checkbox controls the state -->
+          <input
+            type="checkbox"
+            class=" "
+            data-toggle-theme="dark,light"
+            data-act-class="ACTIVECLASS"
+            value="synthwave"
+          />
+
+          <!-- sun icon -->
+          <svg
+            class="swap-off fill-current w-5 h-5"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"
+            />
+          </svg>
+
+          <!-- moon icon -->
+          <svg
+            class="swap-on fill-current w-5 h-5"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"
+            />
+          </svg>
+        </label>
+      </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- DaisyUI success and error alerts -->
+    <div
+      id="successAlert"
+      class="fixed z-[9999] hidden mt-4 bg-green-100 border-l-4 border-green-500 text-green-700 p-4 rounded mt-[3rem] right-0 lg:mt-[2rem] lg:left-[45rem] lg:ml-64"
+      role="alert"
+    >
+      <p class="font-bold">Success!</p>
+      <p>Your message has been sent successfully.</p>
+    </div>
+    <div
+      id="errorAlert"
+      class="fixed z-[9999] hidden mt-4 bg-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded mt-[6rem] right-0 lg:mt-[6rem] lg:left-[50rem] lg:ml-64"
+      role="alert"
+    >
+      <p class="font-bold">Error!</p>
+      <p>Please fill in all fields.</p>
+    </div>
+
+    <!-- Home -->
+    <section
+      class="home pt-10 overflow-hidden shadow-sm md:pt-10 sm:pt-16 2xl:pt-16"
+      id="home"
+    >
+      <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+        <div
+          class="grid items-center grid-cols-1 md:grid-cols-2 md:flex-row-reverse md:gap-16"
+        >
+          <div class="relative mb-14 md:mb-0">
+            <img
+              class="absolute w-10/12 inset-x-0 bottom-0 -mb-0 -translate-x-1/2 left-1/2"
+              src="https://cdn.rareblocks.xyz/collection/celebration/images/team/1/blob-shape.svg"
+              alt=""
+            />
+
+            <img
+              class="relative w-full xl:max-w-lg xl:mx-auto 2xl:origin-bottom 2xl:scale-110"
+              src="./assets/img/avator.png"
+              alt=""
+            />
+          </div>
+
+          <div class="mb-12 md:mb-0 md:mt-24">
+            <h2
+              class="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl"
+            >
+              Yeabtsega Mesfin
+            </h2>
+            <p
+              class="max-w-lg mt-3 text-xl leading-relaxed text-gray-600 md:mt-8"
+            >
+              Hey 👋 I'm Passionate Full-stack web developer. <br />In
+              Ethiopia✨.
+            </p>
+
+            <p class="mt-4 text-xl text-gray-600 md:mt-8 mb-">
+              <a href="" target="_blank" class="mr-3 text-3xl"
+                ><i class="fa-brands fa-telegram"></i
+              ></a>
+              <a href="" target="_blank" class="mx-3 text-3xl"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+              <a href="" target="_blank" class="mx-3 text-3xl"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+              <a href="" target="_blank" class="mx-3 text-3xl"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+            </p>
+
+            <div class="">
+              <a
+                href="#"
+                title=""
+                class="inline-flex items-center justify-center px-10 py-4 text-base font-semibold text-white transition-all duration-200 rounded-md mt-9 bg-gradient-to-r from-fuchsia-600 to-blue-600 hover:opacity-80 focus:opacity-80"
+                role="button"
+                id="downloadButton"
+                >Download Resume</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+       <!-- DaisyUI Notification -->
+  <div id="notification" class="hidden fixed inset-0 flex items-end justify-center px-4 py-6 pointer-events-none sm:p-6 sm:items-start sm:justify-end mt-12">
+    <div class="max-w-sm w-full bg-white shadow-lg rounded-lg pointer-events-auto">
+      <div class="rounded-lg shadow-xs overflow-hidden">
+        <div class="p-4">
+          <div class="flex items-start">
+            <div class="flex-shrink-0">
+              <!-- DaisyUI Icon -->
+              <svg class="h-6 w-6 text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+            <div class="ml-3 w-0 flex-1 pt-0.5">
+              <!-- Notification Text -->
+              <p id="notificationText" class="text-sm font-medium text-gray-900">
+               Resume Downloaded
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    </section>
+
+    <!-- About -->
+    <section class="about py-10 bg-base-200 sm:py-16 lg:pt-12" id="about">
+      <div class="flex flex-row gap-6 mx-4 xl:mx-20 my-5 lg:mt-20"> <!--  -->
+        <div class="text-2xl font-bold md:-mt-5">About Me</div>
+        <div class="bg-white w-4 h-5 rounded-lg -mt-3 shadow-lg"></div>
+      </div>
+
+      <div class="px-4 mx-auto sm:px-6 lg:px-10 max-w-7xl">
+        <div
+          class="grid items-center grid-cols-1 gap-y-8 lg:grid-cols-2 gap-x-16 xl:gap-x-28"
+        >
+          <div class="lg:-mt-28">
+            <p class="mt-0 text-lg leading-relaxed text-gray-600">
+              I’m a Full-Stack web developer. I have a strong understanding of
+              the technical aspects of web development..
+            </p>
+            <h3 class="my-5 text-md">Personal info &#128071;</h3>
+
+            <div
+              class="border-2 card max-w-[30rem] mx-auto flex flex-row bg-base-100 shadow-6xl"
+            >
+              <div class="shadow-md rounded-lg">
+                <ul class="text-sm text-left p-5 text-gray-500">
+                  <li class="mb-2">
+                    <i class="fa-solid fa-microphone"></i> Name :
+                  </li>
+                  <li class="mb-2">
+                    <i class="fa-solid fa-envelope"></i> Email:
+                  </li>
+                  <li class="mb-2">
+                    <i class="fa-solid fa-flag"></i> Country :
+                  </li>
+                  <li class="mb-2"><i class="fa-solid fa-city"></i> City :</li>
+                  <li class="mb-2">
+                    <i class="fa-solid fa-graduation-cap"></i> Degree :
+                  </li>
+                </ul>
+              </div>
+              <div class="rounded-lg">
+                <ul class="text-sm text-left p-5">
+                  <li class="mb-2">Yeabtsega Mesfin</li>
+                  <li class="mb-2 text-blue-800">yeabtsegamesfin2@gmail.com</li>
+                  <li class="mb-2">Ethiopia✨</li>
+                  <li class="mb-2">A.A</li>
+                  <li class="mb-2">Bsc, Computer Science</li>
+                </ul>
+              </div>
+              
+            </div>
+          </div>
+
+          <div class="relative mb-12 hidden lg:block lg:-mt-16">
+            <img
+              class="w-10/12 rounded-md"
+              src="./assets/img/avator.png"
+              alt=""
+            />
+
+            <div
+              class="absolute w-full max-w-xs px-4 -translate-x-1/2 sm:px-0 sm:max-w-sm left-1/2 -bottom-12"
+            >
+              <div class="overflow-hidden bg-base-100 rounded">
+                <div class="px-10 py-6">
+                  <div class="flex items-center">
+                    <p class="pl-6 text-md font-medium sm:text-lg">
+                      <span class="text-3xl">Yeabtsega Mesfin</span> <br /><span
+                        class="text-gray-500 ml-1"
+                        >Full-Stack Web Developer</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skill -->
+    <section class="skill py-10 bg-base-100 sm:py-16 lg:py-12">
+      <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="flex flex-col w-12/12 mx-auto border-opacity-50">
+          <div
+            class="divider divider-start divider-info text-lg font-bold text-gray-600 mb-10"
+          >
+            My Skills
+          </div>
+        </div>
+
+        <div
+          class="grid grid-cols-3 gap-5 px-2 mt-8 sm:px-0 lg:mt-16 sm:grid-cols-5 lg:grid-cols-5 xl:gap-x-1"
+        >
+          <div class="overflow-hidden w-36 border border-gray-200 rounded-lg">
+            <div class="px-10 py-6">
+              <div class="flex items-start flex-col">
+                <img
+                  src="./assets/img/next.svg"
+                  alt=""
+                  class="flex-shrink-0 w-12 h-12 text-fuchsia-600"
+                />
+                <div class="ml">
+                  <p class="mt-1.5 text-lg font-medium leading-tight">
+                    Next.js
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="overflow-hidden w-36 border border-gray-200 rounded-lg">
+            <div class="px-10 py-6">
+              <div class="flex items-start flex-col">
+                <img
+                  src="./assets/img/react.svg"
+                  alt=""
+                  class="flex-shrink-0 w-12 h-12 text-fuchsia-600"
+                />
+                <div>
+                  <p class="mt-1.5 text-lg font-medium leading-tight">
+                    React.js
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="overflow-hidden w-36 border border-gray-200 rounded-lg">
+            <div class="px-10 py-6">
+              <div class="flex items-start flex-col">
+                <img
+                  src="./assets/img/node.svg"
+                  alt=""
+                  class="flex-shrink-0 w-12 h-12 text-fuchsia-600"
+                />
+                <div>
+                  <p class="mt-1.5 text-lg font-medium leading-tight">
+                    Node.js
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="overflow-hidden w-36 border border-gray-200 rounded-lg">
+            <div class="px-10 py-6">
+              <div class="flex items-start flex-col">
+                <img
+                  src="./assets/img/express.svg"
+                  alt=""
+                  class="flex-shrink-0 w-12 h-12 text-fuchsia-600"
+                />
+                <div>
+                  <p class="mt-1.5 text-lg font-medium leading-tight">
+                    Express.js
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="overflow-hidden w-36 border border-gray-200 rounded-lg">
+            <div class="px-10 py-6">
+              <div class="flex items-start flex-col">
+                <img
+                  src="./assets/img/mongo.svg"
+                  alt=""
+                  class="flex-shrink-0 w-12 h-12 text-fuchsia-600"
+                />
+                <div>
+                  <p class="mt-1.5 text-lg font-medium leading-tight">
+                    MongoDB
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section class="portfolio py-10 bg-base-200 sm:py-16 lg:py-24 " id="portfolio">
+      <div class="flex flex-row gap-6 mx-5 xl:mx-20 my-5">
+        <div class="text-2xl font-bold">Latest Projects</div>
+        <div class="bg-white w-4 h-5 rounded-lg mt-2 shadow-lg"></div>
+      </div>
+
+      <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-6xl">
+        <div
+          class="grid grid-cols-1 gap-6 mt-8 sm:mt-12 xl:mt-20 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8 xl:gap-14"
+        >
+          <div class="bg-base-100">
+            <div class="py-8 px-9">
+              <img src="./assets/img/express.svg" alt="" class="w-1/2" />
+              <p class="text-lg font-bold">Title here</p>
+              <button class="text-md text-blue-800 " onclick="my_modal_1.showModal()">More info</button>
+              <!-- You can open the modal using ID.showModal() method -->
+              <dialog id="my_modal_1" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl">
+                  <h3 class="font-bold text-lg">Hello!</h3>
+                  <p class="py-4"> Write Description</p>
+                  <div class="modal-action">
+                    <form method="dialog">
+                      <!-- if there is a button, it will close the modal -->
+                      <button class="btn absolute right-2 top-2">X</button>
+                    </form>
+                  </div>
+                </div>
+              </dialog>
+            </div>
+          </div>
+
+          <div class="bg-base-100">
+            <div class="py-8 px-9">
+              <img src="./assets/img/express.svg" alt="" class="w-1/2" />
+              <p class="text-lg font-bold">Title here</p>
+              <button class="text-md text-blue-800 " onclick="my_modal_2.showModal()">More info</button>
+              <!-- You can open the modal using ID.showModal() method -->
+              <dialog id="my_modal_2" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl">
+                  <h3 class="font-bold text-lg">Hello!</h3>
+                  <p class="py-4"> Write Description</p>
+                  <div class="modal-action">
+                    <form method="dialog">
+                      <!-- if there is a button, it will close the modal -->
+                      <button class="btn absolute right-2 top-2">X</button>
+                    </form>
+                  </div>
+                </div>
+              </dialog>
+            </div>
+          </div>
+
+
+          <div class="bg-base-100">
+            <div class="py-8 px-9">
+              <img src="./assets/img/express.svg" alt="" class="w-1/2" />
+              <p class="text-lg font-bold">Title here</p>
+              <button class="text-md text-blue-800 " onclick="my_modal_3.showModal()">More info</button>
+              <!-- You can open the modal using ID.showModal() method -->
+              <dialog id="my_modal_3" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl">
+                  <h3 class="font-bold text-lg">Hello!</h3>
+                  <p class="py-4"> Write Description</p>
+                  <div class="modal-action">
+                    <form method="dialog">
+                      <!-- if there is a button, it will close the modal -->
+                      <button class="btn absolute right-2 top-2">X</button>
+                    </form>
+                  </div>
+                </div>
+              </dialog>
+            </div>
+          </div>
+
+
+          <div class="bg-base-100">
+            <div class="py-8 px-9">
+              <img src="./assets/img/express.svg" alt="" class="w-1/2" />
+              <p class="text-lg font-bold">Title here</p>
+              <button class="text-md text-blue-800 " onclick="my_modal_4.showModal()">More info</button>
+              <!-- You can open the modal using ID.showModal() method -->
+              <dialog id="my_modal_4" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl">
+                  <h3 class="font-bold text-lg">Hello!</h3>
+                  <p class="py-4"> Write Description</p>
+                  <div class="modal-action">
+                    <form method="dialog">
+                      <!-- if there is a button, it will close the modal -->
+                      <button class="btn absolute right-2 top-2">X</button>
+                    </form>
+                  </div>
+                </div>
+              </dialog>
+            </div>
+          </div>
+
+
+          <div class="bg-base-100">
+            <div class="py-8 px-9">
+              <img src="./assets/img/express.svg" alt="" class="w-1/2" />
+              <p class="text-lg font-bold">Title here</p>
+              <button class="text-md text-blue-800 " onclick="my_modal_5.showModal()">More info</button>
+              <!-- You can open the modal using ID.showModal() method -->
+              <dialog id="my_modal_5" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl">
+                  <h3 class="font-bold text-lg">Hello!</h3>
+                  <p class="py-4"> Write Description</p>
+                  <div class="modal-action">
+                    <form method="dialog">
+                      <!-- if there is a button, it will close the modal -->
+                      <button class="btn absolute right-2 top-2">X</button>
+                    </form>
+                  </div>
+                </div>
+              </dialog>
+            </div>
+          </div>
+
+
+          <div class="bg-base-100">
+            <div class="py-8 px-9">
+              <img src="./assets/img/express.svg" alt="" class="w-1/2" />
+              <p class="text-lg font-bold">Title here</p>
+              <button class="text-md text-blue-800 " onclick="my_modal_6.showModal()">More info</button>
+              <!-- You can open the modal using ID.showModal() method -->
+              <dialog id="my_modal_6" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl">
+                  <h3 class="font-bold text-lg">Hello!</h3>
+                  <p class="py-4"> Write Description</p>
+                  <div class="modal-action">
+                    <form method="dialog">
+                      <!-- if there is a button, it will close the modal -->
+                      <button class="btn absolute right-2 top-2">X</button>
+                    </form>
+                  </div>
+                </div>
+              </dialog>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Contact  -->
+    <section class="contact bg-base-100" id="contact">
+      <div class="flex flex-row gap-6 mx-5 xl:mx-20 my-10">
+        <div class="text-2xl font-bold mt-32 mb-12">Contact Me</div>
+        <div class="bg-white w-4 h-5 rounded-lg mt-32 shadow-lg"></div>
+      </div>
+      <div class="contact max-w-5xl mx-auto mt-8 my-32">
+        <div class="grid grid-cols-1 gap-16 md:grid-cols-3 ">
+          <!-- Contact Form -->
+          <div class="md:col-span-2">
+            <form
+              id="contactForm"
+              class="bg-base-200 shadow-md rounded-xl px-8 pt-6 pb-8 mb-4"
+            >
+              <div class="mb-4">
+                <label
+                  class="block text-gray-700 text-xs font-bold mb-2"
+                  for="name"
+                >
+                  Name
+                </label>
+                <input
+                  class="bg-base-100 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="name"
+                  type="text"
+                  placeholder="Name"
+                />
+              </div>
+              <div class="mb-4">
+                <label
+                  class="block text-gray-700 text-xs font-bold mb-2"
+                  for="email"
+                >
+                  Email
+                </label>
+                <input
+                  class="bg-base-100 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="email"
+                  type="email"
+                  placeholder="Email"
+                />
+              </div>
+              <div class="mb-6">
+                <label
+                  class="block text-gray-700 text-xs font-bold mb-2"
+                  for="message"
+                >
+                  Message
+                </label>
+                <textarea
+                  class="bg-base-100 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="message"
+                  placeholder="Message"
+                ></textarea>
+              </div>
+              <div class="flex items-center justify-between">
+                <button
+                  id="submitButton"
+                  class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                  type="submit"
+                >
+                  Send
+                </button>
+              </div>
+            </form>
+          </div>
+  
+          <!-- Side Cards -->
+          <div
+            class="contact md:mt-3 md:col-span-1 lg:ml-10 mx-5 md:mx-10 lg:mx-0 xl:mx-0"
+          >
+            <div class="bg-base-200 shadow-md rounded-xl p-4 mb-4">
+              <h2 class="text-md font-semibold mb-4">My Location</h2>
+              <p>Addis Ababa</p>
+              <p>Ethiopia</p>
+            </div>
+            <div class="bg-base-200 shadow-md rounded-xl p-4 mb-4">
+              <h2 class="text-md font-semibold mb-4">Street</h2>
+              <p>Ethio China St,</p>
+            </div>
+            <div class="bg-base-200 shadow-md rounded-xl p-4 mb-4">
+              <h2 class="text-md font-semibold mb-4">Phone Number</h2>
+              <p>+251930488356</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact End -->
+
+    <!-- Footer -->
+    <footer class="footer footer-center p-4 bg-base-300 text-base-content">
+      <aside>
+        <p>Copyright © 2024 - All right reserved by YeabMe</p>
+      </aside>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- JS -->
+    <script src="./assets/js/script.js"></script>
+    <!-- Contact JS -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
+
+    <script>
+      // Function to show error alert at the top of the page
+      function showErrorAlert() {
+        var errorAlert = document.getElementById("errorAlert");
+        errorAlert.classList.remove("hidden");
+        errorAlert.style.top = "0"; // Position at the top of the page
+
+        setTimeout(function () {
+          errorAlert.classList.add("hidden"); // Hide the alert after 10 seconds
+        }, 1000); // 10 seconds
+      }
+
+      // Initialize EmailJS with your user ID
+      emailjs.init("w33vCo8iLUm8Xw_ph");
+
+      // Function to send email
+      function sendEmail() {
+        // Get form values
+        var name = document.getElementById("name").value.trim();
+        var email = document.getElementById("email").value.trim();
+        var message = document.getElementById("message").value.trim();
+
+        // Check if any field is empty
+        if (!name || !email || !message) {
+          showErrorAlert(); // Call showErrorAlert to show and hide the error alert after 10 seconds
+          return;
+        }
+
+        // Send email using EmailJS
+        emailjs
+          .send("service_8skmivo", "template_wil7z7j", {
+            name: name,
+            email: email,
+            message: message,
+          })
+          .then(
+            function (response) {
+              console.log("Email sent successfully:", response);
+              // Show success alert
+              document
+                .getElementById("successAlert")
+                .classList.remove("hidden");
+              // Reset form fields
+              document.getElementById("contactForm").reset();
+              // Hide error alert if previously shown
+              document.getElementById("errorAlert").classList.add("hidden");
+              // Hide success alert after 10 seconds
+              setTimeout(function () {
+                document.getElementById("successAlert").classList.add("hidden");
+              }, 1000); // 10 seconds
+            },
+            function (error) {
+              console.error("Email sending failed:", error);
+              alert("Sorry, there was an error sending your message.");
+            }
+          );
+      }
+
+      // Add submit event listener to the form
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          sendEmail();
+        });
+    </script>
+    <!-- <script src="//code.tidio.co/1vbwf3vffmuvwn0eowdqxhuey0nfisru.js" async></script> -->
+  </body>
+</html>
